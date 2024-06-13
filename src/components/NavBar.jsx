@@ -1,26 +1,14 @@
 function NavBar(props) {
-  const { pokemonIndex, handleClickBefore, handleClickNext, MaxIndex, PokemonList } = props;
+  const { handlePokemonClick, PokemonList } = props;
   return (
-    <div>
-      {pokemonIndex > 0 ? (
-        <button onClick={handleClickBefore}>Précédent</button>
-      ) : (
-        <button style={{ visibility: 'hidden' }}></button>
-      )}
-      {pokemonIndex < MaxIndex ? (
-        <button onClick={handleClickNext}>Suivant</button>
-      ) : (
-        <button style={{ visibility: 'hidden' }}></button>
-      )}
       <div>
-        {
-          PokemonList.map(pokemon => (
-            <button key={pokemon.id} onClick={() => console.log(pokemon.id)}>{pokemon.name}</button>
-          ))
-        }
+          {PokemonList.map((pokemon) => (
+              <button key={pokemon.name} onClick={() => handlePokemonClick(pokemon.name)}>
+                  {pokemon.name}
+              </button>
+          ))}
       </div>
-    </div>
-  )
+  );
 }
 
-export default NavBar
+export default NavBar;

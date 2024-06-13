@@ -9,7 +9,7 @@ function PokemonCard({pokemon}) {
             (
                 <img src={pokemon.imgSrc} alt={pokemon.name} />
             ) : (
-                <p>???</p>
+                <p>Et l'image de {pokemon.name} ???</p>
             )}
             <figcaption>{pokemon.name}</figcaption>
         </figure>
