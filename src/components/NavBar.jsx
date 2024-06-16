@@ -1,5 +1,7 @@
 function NavBar(props) {
   const { handlePokemonClick, PokemonList } = props;
+
+ 
   return (
       <div>
           {PokemonList.map((pokemon) => (

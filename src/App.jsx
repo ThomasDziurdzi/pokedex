@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import './App.css';
 import PokemonCard from './components/PokemonCard';
 import NavBar from './components/NavBar';
@@ -9,10 +9,20 @@ function App() {
   const [pokemonName, setPokemonName] = useState(pokemonList[0].name);
   
   const handlePokemonClick = (name) => {
-    setPokemonName(name);
+    if (name === 'pikachu') {
+      setPokemonName(name);
+      alert("PIKACHUUUUUUUUUUUUUUU")
+    } else {
+      setPokemonName(name);
+    }
   };
 
   const selectedPokemon = pokemonList.find(pokemon => pokemon.name === pokemonName);
+
+  useEffect( () => {
+    alert("hello pokemon trainer :)")
+  }, [] 
+);
 
   return (
     <>
